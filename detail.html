@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUDIO FATHBOY — Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="detail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body detail-product>
+    <div id="cursor"></div>
+    <div class="detail-brand">AUDIO FATHBOY</div>
+    <section class="productDetail" id="productDetail">
+      <p style="color: rgba(255, 255, 255, 0.3); font-size: 0.85rem">
+        Memuat produk...
+      </p>
+    </section>
+    <script src="detail.js" defer></script>
+    <script>
+      const cur = document.getElementById("cursor");
+      document.addEventListener("mousemove", (e) => {
+        cur.style.left = e.clientX + "px";
+        cur.style.top = e.clientY + "px";
+      });
+    </script>
+  </body>
+</html>

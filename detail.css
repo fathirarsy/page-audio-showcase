@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap');
+
+body[detail-product] {
+  background: #060608;
+  font-family: 'Outfit', sans-serif;
+  color: #f0f0f0;
+  cursor: none;
+  min-height: 100vh;
+}
+
+body[detail-product] #cursor {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: #e8ff44;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+  mix-blend-mode: exclusion;
+}
+
+.detail-brand {
+  position: fixed; top: 28px; left: 36px;
+  z-index: 50;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: #e8ff44;
+  display: flex; align-items: center; gap: 10px;
+}
+.detail-brand::before {
+  content: '';
+  width: 22px; height: 2px;
+  background: #e8ff44;
+}
+
+.productDetail {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 24px 80px;
+  display: grid;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: none; }
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s, gap 0.2s;
+  width: fit-content;
+}
+.back::before { content: '←'; font-size: 1rem; color: #e8ff44; }
+.back:hover { color: #fff; gap: 12px; }
+
+.detail-hero {
+  width: 100%;
+  aspect-ratio: 16/7;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden;
+  position: relative;
+}
+.detail-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6,6,8,0.6) 0%, transparent 60%);
+}
+
+.detail-card {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.detail-header {
+  padding: 32px 32px 24px;
+  display: grid;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.detail-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e8ff44;
+  display: flex; align-items: center; gap: 8px;
+}
+.detail-tag::before { content: ''; width: 16px; height: 1.5px; background: #e8ff44; }
+
+.detail-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.detail-subtitle {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0;
+}
+.detail-stats .stat {
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  border-radius: 0;
+  display: flex; flex-direction: column; gap: 4px;
+  transition: background 0.2s;
+}
+.detail-stats .stat:hover { background: rgba(255,255,255,0.03); }
+.detail-stats .stat:last-child { border-right: none; }
+
+.detail-stats .label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.detail-stats .value {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.detail-description {
+  padding: 28px 32px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.detail-description p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.detail-description p:last-child { margin-bottom: 0; }
+
+.detail-price-block {
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.price-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+.price-value {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  color: #e8ff44;
+}
