@@ -18,7 +18,6 @@
   --c-glass: rgba(6,6,10,0.72);
   --font-display: 'Bebas Neue', cursive;
   --font-body: 'Outfit', sans-serif;
-  scroll-snap-type: y mandatory;
 }
 
 html { scroll-behavior: smooth; }
@@ -56,7 +55,6 @@ body { cursor: none; }
   justify-content: flex-end;
   position: relative;
   overflow: hidden;
-  scroll-snap-align: start;
 }
 
 .hero::before {
